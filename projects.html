@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Piyu Gade | Projects</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">Piyu Gade</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="education.html">Education</a></li>
+      <li><a href="skills.html" >Skills</a></li>
+      <li><a href="projects.html" class="active">Projects</a></li>
+      <li><a href="experience.html">Experience</a></li>
+     
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+  <section class="page">
+    <div class="section-header">
+      <div class="section-eyebrow">projects</div>
+      <h2 class="section-title">Projects</h2>
+      <div class="section-line"></div>
+      <p class="section-sub">Explore my work across Data Science, software development, machine learning, and IoT.</p>
+    </div>
+    <article class="proj"><button class="proj-head" aria-expanded="false"><div><div class="proj-title">Cyberbullying Analysis and Detection using DL</div><div class="proj-sum">Three transformer models and a risk module that rate harmful comments.</div></div><div class="proj-meta"><span class="exp-date">2025 – 2026</span><span class="proj-chev"></span></div></button>
+      <div class="proj-body"><div><div class="proj-inner"><div class="pipe" aria-label="System pipeline"><span class="node">Comment / CSV</span><span class="arrow">&rsaquo;</span>
+<span class="stack"><span class="node">DistilBERT: toxicity</span><span class="node">DistilRoBERTa: emotion</span><span class="node">DistilBERT: sarcasm</span></span><span class="arrow">&rsaquo;</span><span class="node">Rule-based risk module</span><span class="arrow">&rsaquo;</span><span class="risk"><i>Low</i><i>Medium</i><i>High</i></span></div><ul><li>Built a multi-transformer deep learning system to detect and analyze harmful online comments.</li><li>Used DistilBERT for multi-label toxicity detection, DistilRoBERTa for emotion classification, and a second DistilBERT for sarcasm detection.</li><li>Combined the model outputs with a rule-based risk module that labels each comment Low, Medium or High risk.</li><li>Built a web dashboard that accepts text and CSV input and charts toxicity, emotion, sarcasm and risk.</li></ul><div class="skill-tags"><span class="skill-tag">Python</span><span class="skill-tag">DistilBERT</span><span class="skill-tag">DistilRoBERTa</span><span class="skill-tag">NLP</span><span class="skill-tag">Deep Learning</span><span class="skill-tag">Dashboard</span></div></div></div></div></article><article class="proj"><button class="proj-head" aria-expanded="false"><div><div class="proj-title">Hospital Management System</div><div class="proj-sum">CRUD app for patient, doctor and appointment records.</div></div><div class="proj-meta"><span class="exp-date">2024 – 2025</span><span class="proj-chev"></span></div></button>
+      <div class="proj-body"><div><div class="proj-inner"><ul><li>Built a hospital management application for patient records, doctor information, appointments and related data.</li><li>Implemented add, update, view and delete operations to keep hospital information organized.</li><li>Designed a structured database for fast retrieval of patient and hospital records.</li></ul><div class="skill-tags"><span class="skill-tag">Java</span><span class="skill-tag">SQL</span><span class="skill-tag">DBMS</span><span class="skill-tag">CRUD</span></div></div></div></div></article><article class="proj"><button class="proj-head" aria-expanded="false"><div><div class="proj-title">Farm Irrigation System</div><div class="proj-sum">IoT controller that waters crops from live soil and weather readings.</div></div><div class="proj-meta"><span class="exp-date">2023 – 2024</span><span class="proj-chev"></span></div></button>
+      <div class="proj-body"><div><div class="proj-inner"><ul><li>Built an automated irrigation system on a NodeMCU ESP32 that monitors soil moisture, temperature and humidity and switches water pumps accordingly.</li><li>Saves labor, reduces water waste and improves crop yield by watering based on real-time conditions.</li></ul><div class="skill-tags"><span class="skill-tag">IoT</span><span class="skill-tag">NodeMCU ESP32</span><span class="skill-tag">Sensors</span><span class="skill-tag">Automation</span></div></div></div></div></article>
+  </section>
+</main>
+
+<footer>
+  <p>Designed &amp; Built by <span style="color:var(--accent2);">Piyu Gade</span> &nbsp;·&nbsp; 2026</p>
+</footer>
+
+<script src="script.js" defer></script>
+</body>
+</html>
