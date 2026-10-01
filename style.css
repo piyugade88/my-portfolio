@@ -1,0 +1,250 @@
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --bg:#0a0a0f;
+  --bg2:#111118;
+  --bg3:#1a1a24;
+  --accent:#7c6ef7;
+  --accent2:#a78bfa;
+  --text:#e8e8f0;
+  --muted:#8888a8;
+  --border:#2a2a3a;
+  --card:#13131d;
+}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden;min-height:100vh;display:flex;flex-direction:column;}
+main{flex:1;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,15,0.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 2rem;}
+.nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:60px;}
+.logo{font-family:'Fira Code',monospace;font-size:1.1rem;color:var(--accent2);letter-spacing:0.05em;text-decoration:none;}
+.nav-links{display:flex;gap:2rem;list-style:none;}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:0.85rem;letter-spacing:0.05em;text-transform:uppercase;transition:color 0.2s;padding-bottom:4px;border-bottom:2px solid transparent;}
+.nav-links a:hover{color:var(--accent2);}
+.nav-links a.active{color:var(--accent2);border-bottom-color:var(--accent2);}
+.nav-toggle{display:none;flex-direction:column;gap:4px;cursor:pointer;background:none;border:none;}
+.nav-toggle span{width:22px;height:2px;background:var(--text);display:block;}
+
+/* SECTIONS / PAGE WRAPPER */
+.page{max-width:1100px;margin:0 auto;padding:140px 2rem 80px;}
+
+/* SECTION HEADER */
+.section-header{margin-bottom:3rem;}
+.section-eyebrow{font-family:'Fira Code',monospace;font-size:0.8rem;color:var(--accent);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.5rem;}
+.section-title{font-size:2.2rem;font-weight:700;letter-spacing:-0.02em;}
+.section-line{width:40px;height:2px;background:var(--accent);margin-top:0.75rem;}
+.section-sub{color:var(--muted);font-size:0.95rem;margin-top:1rem;max-width:560px;}
+
+/* HERO (home page) */
+.hero{min-height:calc(100vh - 60px);display:flex;align-items:center;}
+.hero-inner{display:grid;grid-template-columns:1fr auto;gap:4rem;align-items:center;width:100%;}
+.hero-tag{font-family:'Fira Code',monospace;font-size:0.85rem;color:var(--accent);margin-bottom:1rem;letter-spacing:0.08em;}
+.hero-name{font-size:clamp(2.5rem,6vw,4.5rem);font-weight:700;line-height:1.1;letter-spacing:-0.02em;margin-bottom:0.5rem;}
+.hero-name span{color:var(--accent2);}
+.hero-role{font-size:1.2rem;color:var(--muted);font-weight:400;margin-bottom:1.5rem;}
+.hero-bio{font-size:0.95rem;color:var(--muted);max-width:520px;line-height:1.8;margin-bottom:2rem;}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap;}
+.btn-primary{background:var(--accent);color:#fff;padding:0.75rem 1.75rem;border-radius:8px;text-decoration:none;font-size:0.9rem;font-weight:500;transition:opacity 0.2s;display:inline-block;}
+.btn-primary:hover{opacity:0.85;}
+.btn-outline{border:1px solid var(--border);color:var(--text);padding:0.75rem 1.75rem;border-radius:8px;text-decoration:none;font-size:0.9rem;font-weight:500;transition:border-color 0.2s;display:inline-block;}
+.btn-outline:hover{border-color:var(--accent2);}
+.hero-avatar{width:220px;height:220px;border-radius:50%;border:2px solid var(--accent);background:var(--bg3);display:flex;align-items:center;justify-content:center;font-size:5rem;flex-shrink:0;position:relative;overflow:hidden;}
+.hero-avatar img{width:100%;height:100%;object-fit:cover;border-radius:50%;}
+.hero-avatar::after{content:'';position:absolute;inset:-8px;border-radius:50%;border:1px dashed var(--accent);opacity:0.3;animation:spin 20s linear infinite;}
+@keyframes spin{to{transform:rotate(360deg);}}
+.contact-bar{display:flex;gap:1.5rem;flex-wrap:wrap;margin-top:1.5rem;}
+.contact-item{display:flex;align-items:center;gap:0.4rem;font-size:0.82rem;color:var(--muted);}
+.contact-item a{color:var(--accent2);text-decoration:none;}
+.contact-item a:hover{text-decoration:underline;}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;}
+.about-text p{color:var(--muted);font-size:0.95rem;line-height:1.9;margin-bottom:1rem;}
+.info-cards{display:grid;gap:1rem;}
+.info-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:1rem 1.25rem;display:flex;gap:1rem;align-items:flex-start;}
+.info-icon{font-size:1.4rem;margin-top:2px;}
+.info-card h4{font-size:0.9rem;font-weight:600;color:var(--text);margin-bottom:0.15rem;}
+.info-card p{font-size:0.8rem;color:var(--muted);}
+
+/* EDUCATION */
+.timeline{position:relative;padding-left:1.5rem;}
+.timeline::before{content:'';position:absolute;left:0;top:0;bottom:0;width:1px;background:var(--border);}
+.tl-item{position:relative;margin-bottom:2.5rem;}
+.tl-item::before{content:'';position:absolute;left:-1.9rem;top:6px;width:10px;height:10px;border-radius:50%;background:var(--accent);border:2px solid var(--bg);}
+.tl-year{font-family:'Fira Code',monospace;font-size:0.78rem;color:var(--accent);margin-bottom:0.3rem;}
+.tl-school{font-size:1rem;font-weight:600;color:var(--text);}
+.tl-degree{font-size:0.88rem;color:var(--muted);margin-top:0.15rem;}
+.tl-grade{display:inline-block;margin-top:0.5rem;background:rgba(124,110,247,0.12);color:var(--accent2);font-size:0.78rem;padding:2px 10px;border-radius:20px;font-family:'Fira Code',monospace;}
+
+/* SKILLS */
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;}
+.skill-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.5rem;}
+.skill-card h3{font-size:0.85rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--accent2);margin-bottom:1rem;}
+.skill-tags{display:flex;flex-wrap:wrap;gap:0.5rem;}
+.skill-tag{background:rgba(124,110,247,0.1);border:1px solid rgba(124,110,247,0.2);color:var(--text);font-size:0.8rem;padding:4px 12px;border-radius:20px;font-family:'Fira Code',monospace;}
+
+/* EXPERIENCE */
+.exp-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.75rem;margin-bottom:1.5rem;}
+.exp-header{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;}
+.exp-title{font-size:1rem;font-weight:600;}
+.exp-date{font-family:'Fira Code',monospace;font-size:0.78rem;color:var(--accent);background:rgba(124,110,247,0.1);padding:3px 10px;border-radius:4px;}
+.exp-company{font-size:0.88rem;color:var(--accent2);margin-bottom:0.75rem;}
+.exp-desc{font-size:0.85rem;color:var(--muted);line-height:1.8;}
+.exp-desc li{margin-bottom:0.4rem;padding-left:0.5rem;}
+
+/* ACTIVITIES */
+.activities-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;}
+.activity-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:1.25rem;display:flex;gap:1rem;align-items:flex-start;}
+.activity-dot{width:8px;height:8px;border-radius:50%;background:var(--accent);margin-top:8px;flex-shrink:0;}
+.activity-title{font-size:0.9rem;font-weight:600;color:var(--text);}
+.activity-desc{font-size:0.8rem;color:var(--muted);margin-top:0.2rem;}
+
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;}
+.contact-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:1.25rem;display:flex;flex-direction:column;gap:0.4rem;}
+.contact-label{font-size:0.75rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);}
+.contact-val{font-size:0.9rem;color:var(--accent2);text-decoration:none;word-break:break-all;}
+.contact-val:hover{text-decoration:underline;}
+
+/* FOOTER */
+footer{border-top:1px solid var(--border);text-align:center;padding:2rem;color:var(--muted);font-size:0.8rem;font-family:'Fira Code',monospace;}
+
+/* RESPONSIVE */
+@media (max-width: 768px){
+  .nav-links{display:none;}
+  .hero-inner{grid-template-columns:1fr;text-align:center;}
+  .hero-avatar{margin:0 auto;width:160px;height:160px;font-size:3.5rem;}
+  .about-grid{grid-template-columns:1fr;}
+  .contact-bar{justify-content:center;}
+  .hero-btns{justify-content:center;}
+  .page{padding:110px 1.25rem 50px;}
+}
+
+/* ===== v2 additions ===== */
+.hero{position:relative;}
+#net{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;}
+.hero-inner{position:relative;z-index:1;}
+.typed-line{font-family:'Fira Code',monospace;font-size:1.05rem;color:var(--accent2);min-height:1.8em;margin-bottom:1.25rem;}
+.typed-line::after{content:'';display:inline-block;width:2px;height:1.1em;background:var(--accent2);margin-left:3px;vertical-align:-2px;animation:blink 1s steps(1) infinite;}
+@keyframes blink{50%{opacity:0;}}
+.hero-name span{background:linear-gradient(90deg,var(--accent),#c4b5fd,var(--accent));background-size:200% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:shine 6s linear infinite;}
+@keyframes shine{to{background-position:200% center;}}
+.hero-avatar{transition:transform .25s ease;}
+.cursor-glow{position:fixed;width:380px;height:380px;border-radius:50%;pointer-events:none;z-index:0;background:radial-gradient(circle,rgba(124,110,247,.13),transparent 65%);transform:translate(-50%,-50%);left:-999px;top:-999px;}
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .5s ease,transform .5s ease;}
+.reveal.in{opacity:1;transform:none;}
+.nav-progress{position:absolute;left:0;bottom:-1px;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent2));width:0;}
+.nav-toggle{display:none;}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent2);outline-offset:3px;border-radius:4px;}
+
+/* skills filter */
+.filters{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:2rem;}
+.filter-btn{background:transparent;border:1px solid var(--border);color:var(--muted);font:500 .82rem 'Inter',sans-serif;padding:.45rem 1rem;border-radius:20px;cursor:pointer;transition:all .2s;}
+.filter-btn:hover{color:var(--text);border-color:var(--accent2);}
+.filter-btn.on{background:var(--accent);border-color:var(--accent);color:#fff;}
+.skill-card{transition:opacity .3s,transform .3s,border-color .2s;}
+.skill-card.dim{opacity:.18;transform:scale(.98);}
+.skill-card:hover{border-color:var(--accent);}
+.skill-tag{transition:background .2s,transform .2s;cursor:default;}
+.skill-tag:hover{background:rgba(124,110,247,.28);transform:translateY(-2px);}
+.cert-list{list-style:none;display:grid;gap:.6rem;}
+.cert-list li{font-size:.85rem;color:var(--muted);padding-left:1.1rem;position:relative;}
+.cert-list li::before{content:'';position:absolute;left:0;top:.6em;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.cert-list b{color:var(--text);font-weight:500;}
+
+/* projects */
+.proj{background:var(--card);border:1px solid var(--border);border-radius:12px;margin-bottom:1.25rem;overflow:hidden;transition:border-color .2s;}
+.proj:hover,.proj.open{border-color:var(--accent);}
+.proj-head{width:100%;display:flex;justify-content:space-between;align-items:center;gap:1rem;background:none;border:0;color:inherit;font:inherit;text-align:left;padding:1.5rem 1.75rem;cursor:pointer;}
+.proj-title{font-size:1.05rem;font-weight:600;}
+.proj-sum{font-size:.85rem;color:var(--muted);margin-top:.25rem;}
+.proj-meta{display:flex;align-items:center;gap:1rem;flex-shrink:0;}
+.proj-chev{width:10px;height:10px;border-right:2px solid var(--accent2);border-bottom:2px solid var(--accent2);transform:rotate(45deg);transition:transform .3s;}
+.proj.open .proj-chev{transform:rotate(225deg);}
+.proj-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .4s ease;}
+.proj.open .proj-body{grid-template-rows:1fr;}
+.proj-body>div{overflow:hidden;}
+.proj-inner{padding:0 1.75rem 1.75rem;}
+.proj-inner ul{list-style:disc;padding-left:1.2rem;color:var(--muted);font-size:.85rem;line-height:1.8;margin-bottom:1rem;}
+.proj-inner li{margin-bottom:.3rem;}
+.pipe{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;margin:0 0 1.25rem;font-family:'Fira Code',monospace;font-size:.75rem;}
+.pipe .node{border:1px solid var(--border);background:var(--bg3);border-radius:8px;padding:.45rem .8rem;color:var(--text);cursor:default;transition:border-color .2s,background .2s;}
+.pipe .node:hover{border-color:var(--accent2);background:rgba(124,110,247,.15);}
+.pipe .stack{display:grid;gap:.35rem;}
+.pipe .arrow{color:var(--accent);animation:nudge 1.6s ease-in-out infinite;}
+@keyframes nudge{50%{transform:translateX(4px);}}
+.risk{display:flex;gap:.3rem;}
+.risk i{font-style:normal;padding:.35rem .6rem;border-radius:6px;font-size:.7rem;}
+.risk i:nth-child(1){background:rgba(74,222,128,.15);color:#86efac;}
+.risk i:nth-child(2){background:rgba(250,204,21,.15);color:#fde047;}
+.risk i:nth-child(3){background:rgba(248,113,113,.15);color:#fca5a5;}
+
+@media (max-width:768px){
+  .nav-toggle{display:flex;}
+  .nav-links{position:absolute;top:60px;left:0;right:0;flex-direction:column;gap:0;background:rgba(10,10,15,.97);border-bottom:1px solid var(--border);display:none;}
+  .nav-links.open{display:flex;}
+  .nav-links a{display:block;padding:.9rem 2rem;border-bottom:0;}
+  .proj-meta .exp-date{display:none;}
+  .typed-line{font-size:.9rem;}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;}
+  .reveal{opacity:1;transform:none;}
+}
+
+/* ===== v3: minor badge + more motion ===== */
+.minor-badge{display:inline-flex;align-items:center;gap:.5rem;margin:.6rem .5rem 0 0;padding:.3rem .85rem;border-radius:20px;font-size:.78rem;font-weight:500;color:#fff;background:linear-gradient(90deg,var(--accent),#9f7aea,var(--accent));background-size:200% auto;animation:shine 5s linear infinite;}
+.minor-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:#fff;animation:pulse 1.8s ease-out infinite;}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,255,255,.7);}100%{box-shadow:0 0 0 9px rgba(255,255,255,0);}}
+.degree-pair{display:flex;flex-wrap:wrap;gap:.4rem;align-items:center;}
+
+/* hero entrance sequence */
+.hero-inner>div:first-child>*{opacity:0;transform:translateY(18px);animation:rise .7s cubic-bezier(.2,.7,.2,1) forwards;}
+.hero-inner>div:first-child>*:nth-child(1){animation-delay:.1s}.hero-inner>div:first-child>*:nth-child(2){animation-delay:.25s}
+.hero-inner>div:first-child>*:nth-child(3){animation-delay:.4s}.hero-inner>div:first-child>*:nth-child(4){animation-delay:.55s}
+.hero-inner>div:first-child>*:nth-child(5){animation-delay:.7s}.hero-inner>div:first-child>*:nth-child(6){animation-delay:.85s}
+.hero-inner>div:first-child>*:nth-child(7){animation-delay:1s}
+@keyframes rise{to{opacity:1;transform:none;}}
+.hero-avatar{animation:float 5s ease-in-out infinite;}
+@keyframes float{50%{margin-top:-12px;}}
+.hero-avatar::before{content:'';position:absolute;inset:0;border-radius:50%;box-shadow:inset 0 0 40px rgba(124,110,247,.35);}
+.page>.section-header{animation:rise .6s ease both;}
+.section-line{animation:grow .8s .2s ease both;}
+@keyframes grow{from{width:0;}}
+
+/* stats + ticker */
+.stats{display:flex;gap:2.5rem;flex-wrap:wrap;margin-top:2rem;}
+.stat b{display:block;font-size:1.8rem;font-weight:700;color:var(--accent2);line-height:1.1;}
+.stat span{font-size:.78rem;color:var(--muted);}
+.ticker{overflow:hidden;border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--bg2);padding:.9rem 0;-webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);}
+.ticker-track{display:flex;gap:2.5rem;width:max-content;animation:scroll 28s linear infinite;font-family:'Fira Code',monospace;font-size:.85rem;color:var(--muted);}
+.ticker:hover .ticker-track{animation-play-state:paused;}
+.ticker-track span::before{content:'◆';color:var(--accent);margin-right:.7rem;font-size:.6rem;}
+@keyframes scroll{to{transform:translateX(-50%);}}
+
+/* timeline draw + pulsing dots */
+.timeline::before{transform-origin:top;transform:scaleY(0);transition:transform 1.2s ease;}
+.timeline.in::before{transform:scaleY(1);}
+.tl-item::before{animation:pulse2 2.4s ease-out infinite;}
+@keyframes pulse2{0%{box-shadow:0 0 0 0 rgba(124,110,247,.6);}100%{box-shadow:0 0 0 10px rgba(124,110,247,0);}}
+.activity-dot{animation:pulse2 2.4s ease-out infinite;}
+.info-card,.activity-card,.contact-card,.exp-card{transition:transform .25s,border-color .25s,opacity .5s;}
+.info-card:hover,.activity-card:hover,.contact-card:hover,.exp-card:hover{transform:translateY(-4px);border-color:var(--accent);}
+.info-icon{transition:transform .3s;}.info-card:hover .info-icon{transform:scale(1.25) rotate(-8deg);}
+
+/* buttons: shine sweep */
+.btn-primary{position:relative;overflow:hidden;}
+.btn-primary::after{content:'';position:absolute;top:0;left:-60%;width:40%;height:100%;background:rgba(255,255,255,.3);transform:skewX(-20deg);animation:sweep 3.5s ease-in-out infinite;}
+@keyframes sweep{0%,60%{left:-60%;}100%{left:130%;}}
+
+/* skills pop on filter */
+.skill-card:not(.dim) .skill-tag{animation:pop .4s ease both;}
+@keyframes pop{from{opacity:.3;transform:scale(.85);}}
+
+/* data packet travelling along pipeline */
+.pipe .arrow:nth-of-type(odd){animation-delay:.3s;}
+.node{position:relative;}
+.proj.open .pipe .node{animation:glow 3s ease-in-out infinite;}
+.proj.open .pipe .node:nth-child(3){animation-delay:1s;}
+@keyframes glow{50%{border-color:var(--accent2);box-shadow:0 0 14px rgba(124,110,247,.3);}}
+@media (max-width:768px){.stats{justify-content:center;}}
